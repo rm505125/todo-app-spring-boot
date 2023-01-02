@@ -7,9 +7,11 @@
     <title>Welcome Page</title>
   </head>
   <body>
-    <!-- <div>Successful login!</div> -->
-    <div>Welcome ${name}</div>
-    <hr />
-    <div><a href="list-todos">Manage</a> your todos</div>
+    <div class="container">
+      <!-- <div>Successful login!</div> -->
+      <h1>Welcome ${name}</h1>
+      <hr />
+      <div><a href="list-todos">Manage</a> your todos</div>
+    </div>
   </body>
 </html>
