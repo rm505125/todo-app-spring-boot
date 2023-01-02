@@ -2,6 +2,8 @@ package com.code.springboot.TodoApplication.todo;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.Size;
+
 // Database (MySql)
 // static list of todos => Database(H2, MySQl)
 
@@ -11,6 +13,8 @@ public class Todo {
 
 	private int id;
 	private String username;
+	
+	@Size(min = 10, message="Enter atleast 10 charactere")
 	private String description;
 	private LocalDate targetDate;
 	private boolean done;
