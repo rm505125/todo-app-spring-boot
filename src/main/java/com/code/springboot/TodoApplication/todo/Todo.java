@@ -2,29 +2,43 @@ package com.code.springboot.TodoApplication.todo;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Size;
 
 // Database (MySql)
 // static list of todos => Database(H2, MySQl)
 
+@Entity
+//@Table(name = "Todo")
 public class Todo {
 
-	
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+
+	//@Column(name = "Username")
 	private String username;
-	
-	@Size(min = 10, message="Enter atleast 10 charactere")
+
+	//@Column(name = "Description")
+	@Size(min = 10, message = "Enter atleast 10 charactere")
 	private String description;
+
+	//@Column(name = "TargetDate")
 	private LocalDate targetDate;
+
+	//@Column(name = "Status")
 	private boolean done;
 
-	
 	public Todo() {
 		super();
-		// TODO Auto-generated constructor stub
+		// TODO Auto-generated constructor stub 
 	}
-	
+
 	public Todo(int id, String username, String description, LocalDate targetDate, boolean done) {
 		super();
 		this.id = id;
